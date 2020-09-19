@@ -1,5 +1,7 @@
 package ru.vsu.cs;
 
+import ru.vsu.cs.pixel_lines.DDALineDrawer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -23,8 +25,8 @@ public class DrawPanel extends JPanel implements MouseMotionListener {
         gr.fillRect(0, 0, getWidth(), getHeight());
         gr.setColor(new Color(204, 99, 200));
 
-        //PixelDrawer pd =
-        LineDrawer ld = new GraphicsLineDrawer(gr);
+        PixelDrawer pd = new GraphicsPixelDrawer(gr);
+        LineDrawer ld = new DDALineDrawer(pd);
         drawAll(ld);
 
         g.drawImage(bi, 0, 0, null);
