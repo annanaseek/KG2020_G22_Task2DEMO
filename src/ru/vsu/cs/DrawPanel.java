@@ -22,8 +22,11 @@ public class DrawPanel extends JPanel implements MouseMotionListener {
         gr.setColor(Color.WHITE);
         gr.fillRect(0, 0, getWidth(), getHeight());
         gr.setColor(new Color(204, 99, 200));
+
+        //PixelDrawer pd =
         LineDrawer ld = new GraphicsLineDrawer(gr);
         drawAll(ld);
+
         g.drawImage(bi, 0, 0, null);
         gr.dispose();
     }
